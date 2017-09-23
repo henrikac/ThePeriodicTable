@@ -40,10 +40,5 @@ class ElementList:
 
             if ele['IsActinides'] is True:
                 print('- Actinide')
-                
+
             print('\n')
-
-
-if __name__ == '__main__':
-    element = ElementList()
-    element.all()
