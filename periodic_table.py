@@ -38,6 +38,18 @@ class PeriodicTable:
                 self.clear_screen()
                 self.element_list.search_name(name)
                 self.show_options(search_options)
+            elif choice == 'number':
+                while True:
+                    try:
+                        number = int(input('Enter number: '))
+                    except ValueError:
+                        print('Please enter a number.')
+                        continue
+                    else:
+                        self.clear_screen()
+                        self.element_list.search_number(number)
+                        self.show_options(search_options)
+                        break
             else:
                 print('That is not a valid input.')
 

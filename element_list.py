@@ -46,6 +46,13 @@ class ElementList:
                 self.print_element(element)
                 print('\n')
 
+    def search_number(self, number):
+        elements = self.read()
+        for element in elements:
+            if element['Number'] == number:
+                self.print_element(element)
+                print('\n')
+
     def all(self):
         elements = self.read()
         for element in elements:
