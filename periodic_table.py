@@ -46,10 +46,14 @@ class PeriodicTable:
                         print('Please enter a number.')
                         continue
                     else:
-                        self.clear_screen()
-                        self.element_list.search('Number', number)
-                        self.show_options(search_options)
-                        break
+                        if number > 0 and number <= 116:
+                            self.clear_screen()
+                            self.element_list.search('Number', number)
+                            self.show_options(search_options)
+                            break
+                        else:
+                            print('Please only enter a number between 1 and 116.')
+                            continue
             else:
                 print('That is not a valid input.')
 
