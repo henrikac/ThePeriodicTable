@@ -36,7 +36,7 @@ class PeriodicTable:
                 name = input('What element are you looking for? ').capitalize().strip()
 
                 self.clear_screen()
-                self.element_list.search_name(name)
+                self.element_list.search('Name', name)
                 self.show_options(search_options)
             elif choice == 'number':
                 while True:
@@ -47,7 +47,7 @@ class PeriodicTable:
                         continue
                     else:
                         self.clear_screen()
-                        self.element_list.search_number(number)
+                        self.element_list.search('Number', number)
                         self.show_options(search_options)
                         break
             else:

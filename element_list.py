@@ -39,17 +39,10 @@ class ElementList:
         if element['IsActinides'] is True:
             print('- Actinide')
 
-    def search_name(self, name):
+    def search(self, key, value):
         elements = self.read()
         for element in elements:
-            if element['Name'] == name:
-                self.print_element(element)
-                print('\n')
-
-    def search_number(self, number):
-        elements = self.read()
-        for element in elements:
-            if element['Number'] == number:
+            if element[key] == value:
                 self.print_element(element)
                 print('\n')
 
