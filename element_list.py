@@ -3,11 +3,17 @@ import json
 
 class ElementList:
     def read(self):
+        """Reads a json file
+        Returns the list of elements in the file
+        """
         with open('elements.json') as elements:
             element = json.load(elements)
             return element
 
     def print_element(self, element):
+        """Takes an argument (element)
+        Prints out all the details of that element
+        """
         print('{}: {}'.format(element['Number'], element['Name']))
         print('-' * 15)
         print('Kemisk symbol: {}'.format(element['Symbol']))
@@ -40,6 +46,10 @@ class ElementList:
             print('- Actinide')
 
     def search(self, key, value):
+        """Takes two arguments (key, value)
+        Loops through the list of elements returned by read()
+        If element[key] matches value then prints the details of that element
+        """
         elements = self.read()
         for element in elements:
             if element[key] == value:
@@ -47,6 +57,7 @@ class ElementList:
                 print('\n')
 
     def all(self):
+        """Prints a full list of all elements returned by read()"""
         elements = self.read()
         for element in elements:
             self.print_element(element)

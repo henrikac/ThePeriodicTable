@@ -13,13 +13,19 @@ class PeriodicTable:
     element_list = ElementList()
 
     def clear_screen(self):
+        """Clearing the console"""
         os.system('cls' if os.name == 'nt' else 'clear')
 
     def show_options(self, options):
+        """Shows a list of options"""
         for option in options:
             print('{}: {}'.format(option[0], option[1]))
 
     def search(self):
+        """Prints a list a search options
+        Asking the user what he/she wants to search for
+        Prints out detail for the element searched for
+        """
         search_options = (
             ('name', 'Search by name'),
             ('number', 'Search by number'),
@@ -58,6 +64,7 @@ class PeriodicTable:
                 print('That is not a valid input.')
 
     def run(self):
+        """Keeps the program running until the user enter 'quit'"""
         self.clear_screen()
         self.show_options(self.options)
 
