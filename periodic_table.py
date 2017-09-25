@@ -31,7 +31,8 @@ class PeriodicTable:
         search_options = (
             ('name', 'Search by name'),
             ('number', 'Search by number'),
-            ('cancel', 'Go back to start')
+            ('symbol', 'Search by chemical symbol'),
+            ('cancel', 'Go back to start'),
         )
         self.show_options(search_options)
 
@@ -41,11 +42,17 @@ class PeriodicTable:
             if choice == 'cancel':
                 break
             elif choice == 'name':
-                name = input('What element are you looking for? ').capitalize().strip()
+                while True:
+                    name = input('What element are you looking for? ').capitalize().strip()
 
-                self.clear_screen()
-                self.element_list.search('Name', name)
-                self.show_options(search_options)
+                    if len(name) > 0:
+                        self.clear_screen()
+                        self.element_list.search('Name', name)
+                        self.show_options(search_options)
+                        break
+                    else:
+                        print('Please enter a name.')
+                        continue
             elif choice == 'number':
                 while True:
                     try:
@@ -62,6 +69,18 @@ class PeriodicTable:
                         else:
                             print('Please only enter a number between 1 and 116.')
                             continue
+            elif choice == 'symbol':
+                while True:
+                    symbol = input('What element are you looking for? ').capitalize().strip()
+
+                    if len(symbol) > 0:
+                        self.clear_screen()
+                        self.element_list.search('Symbol', symbol)
+                        self.show_options(search_options)
+                        break
+                    else:
+                        print('You have to enter something.')
+                        continue
             else:
                 print('That is not a valid input.')
 
