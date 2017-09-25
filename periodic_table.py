@@ -8,6 +8,7 @@ class PeriodicTable:
     options = (
         ('all', 'Shows all the elements'),
         ('search', 'Search for an element'),
+        ('noblegas', 'Get a list of all noble gases.'),
         ('metals', 'Get a list of all metals'),
         ('non-metals', 'Get a list of all non-metals'),
         ('lanthanides', 'Get a list of all lanthanides'),
@@ -104,6 +105,10 @@ class PeriodicTable:
                 self.clear_screen()
                 self.search()
                 self.clear_screen()
+                self.show_options(self.options)
+            elif choice == 'noblegas':
+                self.clear_screen()
+                self.element_list.search('NobleGas', True)
                 self.show_options(self.options)
             elif choice == 'metals':
                 self.clear_screen()
