@@ -8,6 +8,8 @@ class PeriodicTable:
     options = (
         ('all', 'Shows all the elements'),
         ('search', 'Search for an element'),
+        ('lanthanides', 'Get a list of all lanthanides'),
+        ('actinides', 'Get a list of all actinides'),
         ('quit', 'Exit the program')
     )
     element_list = ElementList()
@@ -81,6 +83,14 @@ class PeriodicTable:
                 self.clear_screen()
                 self.search()
                 self.clear_screen()
+                self.show_options(self.options)
+            elif choice == 'lanthanides':
+                self.clear_screen()
+                self.element_list.search('IsLanthanide', True)
+                self.show_options(self.options)
+            elif choice == 'actinides':
+                self.clear_screen()
+                self.element_list.search('IsActinides', True)
                 self.show_options(self.options)
             else:
                 print('That is not a valid input.')
