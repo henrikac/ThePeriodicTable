@@ -51,10 +51,14 @@ class ElementList:
         If element[key] matches value then prints the details of that element
         """
         elements = self.read()
+        elements_found = 0
         for element in elements:
             if element[key] == value:
                 self.print_element(element)
+                elements_found += 1
                 print('\n')
+        if elements_found == 0:
+            print('Sorry, could not find "{}: {}"\n'. format(key, value))
 
     def all(self):
         """Prints a full list of all elements returned by read()"""
